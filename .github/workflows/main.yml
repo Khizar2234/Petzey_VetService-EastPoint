@@ -17,7 +17,7 @@ jobs:
       with:
         maven-version: 3.8.2
     - name: Analyze with SonarCloud
-      run: ./mvn -B verify sonar:sonar -Dsonar.projectKey=Vet-Service -Dsonar.organization=vet-Service -Dsonar.host.url=https://sonarqube.dev.skillassure.com -Dsonar.login=$SONAR_TOKEN
+      run: ./mvnw -B verify sonar:sonar -Dsonar.projectKey=Vet-Service -Dsonar.organization=vet-Service -Dsonar.host.url=https://sonarqube.dev.skillassure.com -Dsonar.login=$SONAR_TOKEN
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
