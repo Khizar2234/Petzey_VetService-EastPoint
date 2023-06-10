@@ -16,6 +16,8 @@ jobs:
       uses: stCarolas/setup-maven@v4.5
       with:
         maven-version: 3.8.2
+    - name: access 
+      run: chmod +x mvnw
     - name: Analyze with SonarCloud
       run: ./mvnw -B verify sonar:sonar -Dsonar.projectKey=Vet-Service -Dsonar.organization=vet-Service -Dsonar.host.url=https://sonarqube.dev.skillassure.com -Dsonar.login=$SONAR_TOKEN
       env:
