@@ -12,6 +12,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: '11'
+    - name: install maven 
+      run: sudo apt install mvn 
     - name: Analyze with SonarCloud
       run: ./mvn -B verify sonar:sonar -Dsonar.projectKey=Vet-Service -Dsonar.organization=vet-Service -Dsonar.host.url=https://sonarqube.dev.skillassure.com -Dsonar.login=$SONAR_TOKEN
       env:
